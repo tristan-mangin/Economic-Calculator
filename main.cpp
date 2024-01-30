@@ -4,12 +4,6 @@
 #include "interestRateProblem.h"
 
 using namespace std;
-/*
-TOPICS TO INCLUDE
-    Interest Rates
-    Monetary Policy
-    Fiscal Policy
-*/
 
 /*
 Called when the user chooses to solve an interest rate problem
@@ -28,7 +22,7 @@ void interestRates() {
         cout << "\nPlease Select a valid topic\n";
         return;
     }
-    solveNum = stoi(solve);
+    solveNum = stoi(solve); 
 }
 
 void monetaryPolicy() {
