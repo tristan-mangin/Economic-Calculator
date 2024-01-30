@@ -1,0 +1,19 @@
+Interest Rates:
+                                        n
+    Compounding interest: FV = PV(1 + i)
+
+                                                n
+    Discounting interest: PV =     FV / [(1 + i) ]
+                                
+                                                                     n                 n
+    PV = P = (P * (1 + i)) / (1 + i) + ... + (P * (1 + i)) / [(1 + i) ] + FV / [(1 + i) ]
+
+                  FV
+    YTM = i = ___________  - 1          (same for simple loan and discount bond)
+                Principle
+                                               n
+    YTM fixed payment loan = i =  FP / [(1 + i) ]   
+
+    Capital gain/loss = change in P / original P
+
+    Expected return = (coupon rate + change in P) / Purchased P = coupon / purchase P + change in P / purchase P 

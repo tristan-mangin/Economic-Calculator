@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "interestRateProblem.h"
+#include "interestRate.h"
 
 using namespace std;
 
@@ -55,8 +55,8 @@ int main() {
         // Checks prompt and goes to appropriate method
         if (topicNum == 0) { exit = true; }
         else if (topicNum == 1) { interestRates(); }
-        else if (topicNum == 1) { monetaryPolicy(); }
-        else if (topicNum == 1) { fiscalPolicy(); }
+        else if (topicNum == 2) { monetaryPolicy(); }
+        else if (topicNum == 3) { fiscalPolicy(); }
         else { cout << "\nPlease Select a valid topic\n\n"; }
     }
 
