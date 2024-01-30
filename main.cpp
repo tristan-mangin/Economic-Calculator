@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "interestRateProblem.h"
 
 using namespace std;
 /*
@@ -9,11 +10,34 @@ TOPICS TO INCLUDE
     Monetary Policy
     Fiscal Policy
 */
-void interestRates() {}
 
-void monetaryPolicy() {}
+/*
+Called when the user chooses to solve an interest rate problem
+    - Takes user input to choose what is being solved for 
+    - Adds variables to a class and performs operations within the class
+*/
+void interestRates() {
+    int solveNum;
+    string solve;
 
-void fiscalPolicy() {}
+    cout << "What do you want to solve for?\n1. Present Value\n2. Face Value\n3. Coupon Rate\n4. Interest Rate\n5. Years\n0. Exit\n\n>>";
+    cin >> solve;
+
+    // Make sure the input is valid
+    if (isalpha(solve[0])) {
+        cout << "\nPlease Select a valid topic\n";
+        return;
+    }
+    solveNum = stoi(solve);
+}
+
+void monetaryPolicy() {
+
+}
+
+void fiscalPolicy() {
+    
+}
 
 // main function of the program handles user input and direction
 int main() {
@@ -39,12 +63,8 @@ int main() {
         else if (topicNum == 1) { interestRates(); }
         else if (topicNum == 1) { monetaryPolicy(); }
         else if (topicNum == 1) { fiscalPolicy(); }
-        else {
-            cout << "\nPlease Select a valid topic\n\n";
-        }
+        else { cout << "\nPlease Select a valid topic\n\n"; }
     }
-
-
 
     return 0;
 }
