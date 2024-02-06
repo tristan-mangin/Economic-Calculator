@@ -18,7 +18,7 @@ void help() {
 Collects variables and solves for the missing variable in compounding interest problems
 */
 interestRateProblem compoundInterest() {
-    int solve;
+    string solve;
     bool solving = false;
 
     cout << "What do you need to solve for?" << endl;
@@ -28,17 +28,55 @@ interestRateProblem compoundInterest() {
         cout <<"\t1. face value\n\t2. present value\n\t3. interest rate\n>> " << endl;
         cin >> solve;
 
-        if (solve != 1 || solve != 2 || solve != 3) { 
+        if (solve != "1" || solve != "2" || solve != "3") { 
             cout << "please choose a valid number\n" << endl;
-        }else { 
-            solving = true; 
-        }
+        }else { solving = true; }
     }
 
-    // Makes interestRateProblem object to store variables and solve
     interestRateProblem current = interestRateProblem();
-    while (solving) {
+    bool haveFV, havePV, haveInt;
+    if (solve == "1") { 
+        haveFV = false; 
+        havePV = true;
+        haveInt = true;
+    }
+    else if (solve == "2") { 
+        haveFV = true;
+        havePV = false; 
+        haveInt = true;
+    }
+    else { 
+        haveFV = true;
+        havePV = true;
+        haveInt = false; 
+    }
 
+    string info;
+    float result;
+    while (solving) {   
+        // Set variables that already exist in the problem
+        if (haveFV) {
+            cout << "Face Value:" << endl;
+            cin >> info;
+            current.setFV(info);
+        }if (havePV) {
+            cout << "Present Value:" << endl;
+            cin >> info;
+            current.setPV(info);
+        }if (haveInt) {
+            cout << "Interest Rate:" << endl;
+            cin >> info;
+            current.setInterestRate(info);
+        }
+        cout << "Number of Years:" << endl;
+        cin >> info;
+        current.setYears(info);
+
+        // Solve for last variable
+        if (solve == "1") { result = current.solveFV(); }
+        else if (solve == "2") { result = current.solvePV(); }
+        else { result = current.solveInterestRate(); }
+        solving = false;
     }
 
     return current;
