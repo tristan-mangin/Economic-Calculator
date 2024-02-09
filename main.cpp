@@ -25,7 +25,7 @@ interestRateProblem compoundInterest() {
 
     // Prompts user to choose what to solve for
     while (!solving) {  
-        cout <<"\t1. face value\n\t2. present value\n\t3. interest rate\n>> " << endl;
+        cout <<"\t1. face value\n\t2. present value\n\t3. Yield to Maturity\n>> " << endl;
         cin >> solve;
 
         if (solve != "1" || solve != "2" || solve != "3") { 
@@ -75,7 +75,7 @@ interestRateProblem compoundInterest() {
         // Solve for last variable
         if (solve == "1") { result = current.solveFV(); }
         else if (solve == "2") { result = current.solvePV(); }
-        else { result = current.solveInterestRate(); }
+        else { result = current.solveYTM(); }
         solving = false;
     }
 

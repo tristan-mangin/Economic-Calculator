@@ -31,3 +31,44 @@ void interestRateProblem::setInterestRate(string x) { interestRate = stof(x); }
 void interestRateProblem::setCouponRate(string x) { couponRate = stof(x); }
 
 // Solvers
+
+// Discounting 
+float interestRateProblem::solvePV() {
+    float numerator = FV;
+    float denominator = pow(1 + interestRate, years);
+    return numerator / denominator;
+}
+
+// Compounding
+float interestRateProblem::solveFV() {
+    return PV * pow(1 + interestRate, years);
+}
+
+// Solve for price of coupon bond
+float interestRateProblem::solveCouponRate() {
+    float result = 0;
+    float numerator = couponRate * FV;
+    float denominator;
+
+    for (unsigned int i = 1; i <= years; i++) {
+        denominator = pow(1 + interestRate, i);
+        result += numerator / denominator;
+    }
+
+    numerator = FV;
+    result += numerator / denominator;
+    return result;
+}
+
+// Solve for yield to maturity
+float interestRateProblem::solveYTM() {
+    float result = FV / PV - 1;
+    
+    if (result == interestRate) { 
+        return result; 
+    }
+    else { 
+        interestRate = result; 
+        return result;
+    }
+}

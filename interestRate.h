@@ -36,7 +36,7 @@ class interestRateProblem {
         float solvePV();
         float solveFV();
         float solveCouponRate();
-        float solveInterestRate();
+        float solveYTM();
         float solveYears();
 
     private:
