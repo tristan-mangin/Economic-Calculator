@@ -12,4 +12,4 @@ ABOUT:
 
 IMPLEMENTATION: 
 
-    Calculations - C++
+    Java, C++
