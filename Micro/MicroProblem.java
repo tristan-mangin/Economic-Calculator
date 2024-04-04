@@ -1,8 +1,8 @@
 package Micro;
 
 interface InnerMicroProblem {
-    public void getEquation();
-    public void filledEq();
+    public String getEquation();
+    public String filledEq();
 }
 
 /**
@@ -10,10 +10,10 @@ interface InnerMicroProblem {
  */
 public class MicroProblem {
 
-    /**
-     * @effects Constructs new MicroProblem object
-     */
-    public MicroProblem() {
-        throw new UnsupportedOperationException("Not Implementd Yet");
-    }
+    // /**
+    //  * @effects Constructs new MicroProblem object
+    //  */
+    // public MicroProblem() {
+    //     throw new UnsupportedOperationException("Not Implementd Yet");
+    // }
 }

@@ -30,16 +30,45 @@ public class Revenue extends MicroProblem implements InnerMicroProblem {
 
     /**
      * Outputs basic equation to solve Revenue related problems
+     * 
+     * @return output equation
      */
-    public void getEquation() {
-        System.out.println("\'Revenue\' = \'price\' x \'quantity\'");
+    public String getEquation() {
+        String out = "\'Revenue\' = \'price\' x \'quantity\'";
+        System.out.println(out);
+        return out;
     }
 
     /**
      * Outputs the full equation represented by this
+     * 
+     * @return output equation
      */
-    public void filledEq() {
-        System.out.println(this.revenue + " = " + this.price + " x " + this.quantity);
+    public String filledEq() {
+        String out = this.revenue + " = " + this.price + " x " + this.quantity;
+        System.out.println(out);
+        return out;
+    }
+
+    /**
+     * @return price
+     */
+    public double getPrice() {
+        return this.price;
+    }
+
+    /**
+     * @return quantity
+     */
+    public double getQuantity() {
+        return this.quantity;
+    }
+    
+    /**
+     * @return revenue
+     */
+    public double getRevenue() {
+        return this.revenue;
     }
 
     /**
@@ -48,6 +77,7 @@ public class Revenue extends MicroProblem implements InnerMicroProblem {
      */
     public void changePrice(double p) {
         this.price = p;
+        this.revenue = this.price * this.quantity;
     }
 
     /**
@@ -56,5 +86,15 @@ public class Revenue extends MicroProblem implements InnerMicroProblem {
      */
     public void changeQuantity(double q) {
         this.quantity = q;
+        this.revenue = this.price * this.quantity;
+    }
+
+    /**
+     * @effects sets all attributes of this to 0
+     */
+    public void clear() {
+        this.price = 0;
+        this.quantity = 0;
+        this.revenue = 0;
     }
 }
