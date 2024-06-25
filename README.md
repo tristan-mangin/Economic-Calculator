@@ -11,7 +11,7 @@ ABOUT:
 
 IMPLEMENTATION: 
 
-    Java
+    Python
 
 FUTURE PLANS:
 
