@@ -20,6 +20,25 @@ def printInfo():
     This project was started as a way to aid in his studies of economic formulas and ideas, as well as an outlet to 
     practice coding and version control software. Because of this it is in continuous development.\n""")
 
+# Check for other input that is not on the valid list of calculations but is still valid
+def checkInput(prompt):
+    greetings = ["hi", "hello", "howdy", "hola", "hallo"]
+    positive = ["good", "great", "grand", "jolly"]
+    negative = ["bad", "horrible", "terrible", "awful"]
+    valid = False
+
+    if prompt in greetings:
+        print("Hello!")
+        valid = True
+    if prompt in positive:
+        print("That's great I'm glad to hear!")
+        valid = True
+    if prompt in negative:
+        print("I'm very sorry to hear that.")
+        valid = True
+    
+    return valid
+
 # Main body of the program that will continue to run until the user exits 
 def runProgram(running):
     print("Welcome to the Economic Calculator!")
@@ -39,7 +58,8 @@ def runProgram(running):
             running = False
             break
         else:
-            print("Sorry that is an unknown prompt and/or has not been implemented yet.\n")
+            if not checkInput(prompt):
+                print("Sorry that is an unknown prompt and/or has not been implemented yet.\n")
 
 if __name__ == "__main__":
     runProgram(True)
