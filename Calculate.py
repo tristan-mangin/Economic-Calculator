@@ -9,10 +9,11 @@ import Revenue
 # Outputs a valid list of prompts to the terminal when called
 def printHelp():
     print("""List of Valid Prompts: \n
-    \thelp \t-\tlist valid prompts 
-    \tabout \t-\tlearn more about the program and how it works 
-    \trevenue -\tsolve a basic revenue style problem and store it to solved problems for later access
-    \tquit \t-\texit the program
+    \thelp \t\t- list valid prompts 
+    \tabout \t\t- learn more about the program and how it works 
+    \tlist problems \t- List all solved problems with their saved names
+    \trevenue \t- solve a basic revenue style problem and store it to solved problems for later access
+    \tquit \t\t- exit the program
     \nPrompts are NOT case sensitive\n""")
     
 # Outputs the program information to the terminal when called 
@@ -22,6 +23,17 @@ def printInfo():
     This project was started as a way to aid in his studies of economic formulas and ideas, as well as an outlet to 
     practice coding and version control software. Because of this it is in continuous development.\n""")
 
+# List all previously solved problems with the name they are saved as
+def listProblems(problems):
+    count = 0
+    print("Previously Solved Problems:")
+
+    for key in problems.keys():
+        count += 1
+        print("\t{}. {}: {}".format(count, key, problems[key].getFilledEquation()))
+    if count == 0:
+        print("\tNo Solved Problems")
+  
 # Gathers information for the revenue problem being solved
 def revenueProblem(problems):
     print("What name should we save this problem as?")
@@ -92,7 +104,9 @@ def runProgram(running, problems):
             printInfo()
         elif "revenue" in prompt:
             revenueProblem(problems)
-        elif "quit" in prompt:
+        elif "list" and "problems" in prompt:
+            listProblems(problems)
+        elif "quit" or "exit" in prompt:
             running = False
             break
         else:

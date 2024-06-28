@@ -18,17 +18,18 @@ CURRENT FEATURES:
 
     1. List of Valid Prompts
     2. About the Program
-    3. Basic Revenue Equation (IN PROGRESS)
+    3. Basic Revenue Equation
 
 FUTURE PLANS:
 
     Short Term
 
-    - Finish Revenue and debug
     - Access past solved problems
+    - GDP Class 
 
     Long Term
 
+    - Work through all reference material
     - Graphical Representations
     - Web Application Version
         - Mobile 
