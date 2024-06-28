@@ -11,6 +11,7 @@ def printHelp():
     print("""List of Valid Prompts: \n
     \thelp \t-\tlist valid prompts 
     \tabout \t-\tlearn more about the program and how it works 
+    \trevenue -\tsolve a basic revenue style problem and store it to solved problems for later access
     \tquit \t-\texit the program
     \nPrompts are NOT case sensitive\n""")
     
@@ -24,31 +25,36 @@ def printInfo():
 # Gathers information for the revenue problem being solved
 def revenueProblem(problems):
     print("What name should we save this problem as?")
-    name = input(">> ").lower().strip().split()
+    name = input(">> ").lower().strip()
     print("Which component of revenue do you want to solve for?\n\t1. Price\n\t2. Quantity\n\t3. Revenue")
-    component = input(">> ").lower().strip().split()
+    component = input(">> ").lower().strip()
 
     # Gather known componenets
     if "price" in component:
-        input1 = input("Quantity = ")
-        input2 = input("Revenue = ")
-        problems[name] = Revenue(name, component, input1, input2)
-        print("Given a quantity of {:.2f} and a revenue of {:.2f}\n...Price = {:.2f}".format(input1, input2, component))
+        input1 = float(input("Quantity = "))
+        input2 = float(input("Revenue = "))
+        problems[name] = Revenue.Revenue(name, component, input1, input2)
+        current = problems[name]
+        print("Given a quantity of {:.2f} and a revenue of {:.2f}\n...Price = {:.2f}".format(input1, input2, current.getPrice()))
         
     elif "quantity" in component:
-        input1 = input("Price = ")
-        input2 = input("Revenue = ")
-        problems[name] = Revenue(name, component, input1, input2)
-        print("Given a price of {:.2f} and a revenue of {:.2f}\n...Quantity = {:.2f}".format(input1, input2, component))
+        input1 = float(input("Price = "))
+        input2 = float(input("Revenue = "))
+        problems[name] = Revenue.Revenue(name, component, input1, input2)
+        current = problems[name]
+        print("Given a price of {:.2f} and a revenue of {:.2f}\n...Quantity = {:.2f}".format(input1, input2, current.getQuantity()))
 
     elif "revenue" in component:
-        input1 = input("Price = ")
-        input2 = input("Quantity = ")
-        problems[name] = Revenue(name, component, input1, input2)
-        print("Given a price of {:.2f} and a quantity of {:.2f}\n...Revenue = {:.2f}".format(input1, input2, component))
+        input1 = float(input("Price = "))
+        input2 = float(input("Quantity = "))
+
+        problems[name] = Revenue.Revenue(name, component, input1, input2)
+        current = problems[name]
+        print("Given a price of {:.2f} and a quantity of {:.2f}\n...Revenue = {:.2f}".format(input1, input2, current.getRevenue()))
 
     else:
         print("I don't recognize that component as a part of revenue. Try a new kind of problem to solve.")
+        return
 
 # Check for other input that is not on the valid list of calculations but is still valid
 def checkInput(prompt):
