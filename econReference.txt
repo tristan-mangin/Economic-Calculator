@@ -1,3 +1,26 @@
+reference: https://www.pw.live/exams/commerce/formulas-for-economics/
+
+GDP:
+
+    GDP = C + I + G + NX
+        = C + I + G + (exports - imports)
+
+UNEMPLOYMENT RATE:
+
+    UR = (Unemployed / labor force) * 100
+
+MONEY MULTIPLIER:
+
+    Money Multiplier = 1 / reserve ratio
+
+REAL GDP:
+ 
+    Real GDP = (nominal GDP / GDP deflator) * 100
+
+CPI:
+
+    CPI = (Cost of basket in current year / cost of basket in base year) * 100
+
 Interest Rates:
                                         n
     Compounding interest: FV = PV(1 + i)
