@@ -1,5 +1,5 @@
 '''
-Created by Tristan Mangin on 6/25/2024
+Created by Tristan Mangin on 6.25.2024
 
 This file will handle all of the user interaction within the program. It will take input
 and return results to the terminal based on calculations made in imported classes.

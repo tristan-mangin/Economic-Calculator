@@ -1,3 +1,8 @@
+'''
+Created by Tristan Mangin on 6.27.2024
+
+This file will handle the representation of basic revenue problems.
+'''
 class Revenue:
 
     # Initializes a revenue problem given a price and quantity

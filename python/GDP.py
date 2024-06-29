@@ -1,3 +1,8 @@
+'''
+Created by Tristan Mangin on 6.29.2024
+
+This file will handle the representation of any basic GDP problems.
+'''
 class GDP:
 
     # Initializes GDP Problem with given inputs and a component to solve for
