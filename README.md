@@ -30,6 +30,7 @@ FUTURE PLANS:
     Long Term
 
     - Work through all reference material
+    - Enter in known variables and the program can figure out what to solve
     - Graphical Representations
     - Web Application Version
         - Mobile 

@@ -1,4 +1,4 @@
-class Revenue():
+class Revenue:
 
     # Initializes a revenue problem given a price and quantity
     def __init__(self, name, solving, input1, input2):
