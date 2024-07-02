@@ -30,6 +30,10 @@ class Revenue:
             self.quantity = 0
             self.revenue = 0
 
+    '''
+    ACCESSORS
+    '''
+
     # returns the string representation of the basic equation
     def getEquation(self):
         return "Revenue = Price * Quantity"
@@ -49,12 +53,18 @@ class Revenue:
 
     def getRevenue(self):
         return self.revenue
+    
+    '''
+    MODIFIERS
+    '''
 
-    def changePrice(self, newPrice):
-        self.price = newPrice
+    def setPrice(self, p):
+        self.revenue = self.revenue  / self.price * p
+        self.price = p
 
-    def changeQuantity(self, newQuantity):
-        self.quantity = newQuantity
+    def setQuantity(self, q):
+        self.revenue = self.revenue / self.quantity * q
+        self.quantity = q
 
     def clear(self):
         self.price = 0
