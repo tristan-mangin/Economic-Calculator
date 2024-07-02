@@ -63,6 +63,9 @@ class GDP:
     # Returns the full equation represented by the current object
     def getFilledEquation(self):
         return "{:.2f} = {:.2f} + {:.2f} + {:.2f} + {:.2f}".format(self.gdp, self.consumption, self.investment, self.government, self.netExports)
+    
+    def getType(self):
+        return "GDP Problem"
 
     def getName(self):
         return self.name

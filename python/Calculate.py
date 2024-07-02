@@ -30,7 +30,7 @@ def listProblems(problems):
 
     for key in problems.keys():
         count += 1
-        print("\t{}. {}: {}".format(count, key, problems[key].getFilledEquation()))
+        print("\t{}. {}: {}".format(count, key, problems[key].getType()))
     if count == 0:
         print("\tNo Solved Problems")
   

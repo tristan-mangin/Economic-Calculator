@@ -19,13 +19,14 @@ CURRENT FEATURES:
     1. List of Valid Prompts
     2. About the Program
     3. Basic Revenue Equation
+    4. Basic GDP Equation
 
 FUTURE PLANS:
 
     Short Term
 
+    - GDP Calculation Functionality
     - Access past solved problems
-    - GDP Class 
 
     Long Term
 

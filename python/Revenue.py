@@ -42,6 +42,9 @@ class Revenue:
     def getFilledEquation(self):
         return "{:.2f} = {:.2f} * {:.2f}".format(self.revenue, self.price, self.quantity)
     
+    def getType(self):
+        return "Revenue Problem"
+    
     def getName(self):
         return self.name
     
