@@ -5,6 +5,7 @@ This file will handle all of the user interaction within the program. It will ta
 and return results to the terminal based on calculations made in imported classes.
 '''
 import Revenue
+import GDP
 
 # Outputs a valid list of prompts to the terminal when called
 def printHelp():
@@ -66,7 +67,67 @@ def revenueProblem(problems):
 
     else:
         print("I don't recognize that component as a part of revenue. Try a new kind of problem to solve.")
-        return
+
+# Gathers information for the GDP problem being solved
+def GDPproblem(problems):
+    print("What name should we save this problem as?")
+    name = input(">> ").lower().strip()
+    print("Which componenet of revenue do you want to solve for?\n\t1. Consumption Spending\n\t2. Investment Spending\n\t3. Government Spending\n\t4. Net Exports\n\t5. GDP")
+    component = input(">> ").lower().strip()
+
+    # Gather known componenets
+    if "consumption" in component:
+        input1 = float(input("Investment = "))
+        input2 = float(input("Government = "))
+        input3 = float(input("Net Exports = "))
+        input4 = float(input("GDP = "))
+
+        problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
+        current = problems[name]
+        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+
+    elif "investment" in component:
+        input1 = float(input("Consumption = "))
+        input2 = float(input("Government = "))
+        input3 = float(input("Net Exports = "))
+        input4 = float(input("GDP = "))
+
+        problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
+        current = problems[name]
+        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+
+    elif "government" in component:
+        input1 = float(input("Consumption = "))
+        input2 = float(input("Investment = "))
+        input3 = float(input("Net Exports = "))
+        input4 = float(input("GDP = "))
+
+        problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
+        current = problems[name]
+        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+
+    elif "net export" in component:
+        input1 = float(input("Consumption = "))
+        input2 = float(input("Investment = "))
+        input3 = float(input("Government = "))
+        input4 = float(input("GDP = "))
+
+        problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
+        current = problems[name]
+        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+
+    elif "gdp" in component:
+        input1 = float(input("Consumption = "))
+        input2 = float(input("Investment = "))
+        input3 = float(input("Government = "))
+        input4 = float(input("Net Exports = "))
+
+        problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
+        current = problems[name]
+        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+
+    else:
+        print("I don't recognize that componenet as a part of GDP. Try a new kind of problem to solve.")
 
 # Check for other input that is not on the valid list of calculations but is still valid
 def checkInput(prompt):
@@ -104,6 +165,8 @@ def runProgram(running, problems):
             printInfo()
         elif "revenue" in prompt:
             revenueProblem(problems)
+        elif "gdp" in prompt:
+            GDPproblem(problems)
         elif "list" and "problems" in prompt:
             listProblems(problems)
         elif "quit" or "exit" in prompt:
