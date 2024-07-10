@@ -94,7 +94,7 @@ def GDPproblem(problems):
 
         problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
         current = problems[name]
-        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+        print("Given the components\n...Investment Spending = {:.2f}".format(current.getInvestment()))
 
     elif "government" in component:
         input1 = float(input("Consumption = "))
@@ -104,7 +104,7 @@ def GDPproblem(problems):
 
         problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
         current = problems[name]
-        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+        print("Given the components\n...Government Spending = {:.2f}".format(current.getGovernment()))
 
     elif "net export" in component:
         input1 = float(input("Consumption = "))
@@ -114,7 +114,7 @@ def GDPproblem(problems):
 
         problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
         current = problems[name]
-        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+        print("Given the components\n...Net Export = {:.2f}".format(current.getNetExpert()))
 
     elif "gdp" in component:
         input1 = float(input("Consumption = "))
@@ -124,7 +124,7 @@ def GDPproblem(problems):
 
         problems[name] = GDP.GDP(name, component, input1, input2, input3, input4)
         current = problems[name]
-        print("Given the components\n...Consumption Spending = {:.2f}".format(current.getConsumption()))
+        print("Given the components\n...GDP = {:.2f}".format(current.getGDP()))
 
     else:
         print("I don't recognize that componenet as a part of GDP. Try a new kind of problem to solve.")
